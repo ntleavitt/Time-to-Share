@@ -1,0 +1,59 @@
+
+    <!-- view -->
+      <!-- top panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="topPan">
+          <button type="submit" class="btn btn-primary btn-xs" ng-click="logOut()">{{topPanel}}</button>
+        </div>
+      </div>
+
+      <!-- Body of page -->
+      <div class="row bodyRow">
+        <!-- left column -->
+        <div class="col-xs-1" id="sidePan">
+          <a href="#/{{leftURL}}" id="leftNavB" role="button">{{leftPanel}}</a>
+        </div>
+        <!-- middle body, show only if authenticated -->
+        <div class="col-xs-10" id="bodyBlock">
+          
+          <div class="container" ng-show = "!check">
+            <h2>Welcome to "{{timeGroups.name}}"</h2>
+            <p>Our community motto is "{{timeGroups.motto}}"</p>
+              <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Time Credits</div>
+                  <div class="panel-body">"Time Credits" is a form of local currency that can only be exchanged between other members of your community. They are earned by providing a sevice to another member of your community. And versly can be used to pay for a service. The value of a service is detrmined by how long it takes to complete. One credit is equal to 15 minutes.</div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">Service Board</div>
+                  <div class="panel-body">The "Service Board" is used to list services that your are othering to other members of your community. Or a community member can list a service that they are requiring.</div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">Discussion Board</div>
+                  <div class="panel-body">The "Discussion Board" is used to convay ideas between other members of the community. All ideas/topics can be commented and viewed on by other members.</div>
+                </div>
+              </div>
+            </div>
+            <!-- show if not authenticated -->
+            <div class="container" ng-show = "check">
+              {{message}}
+            </div>
+            </div>
+        
+            <!-- right column -->
+            <div class="col-xs-1" id="sidePan">
+              <a href="#/{{rightURL}}" id="rightNavB" role="button">{{rightPanel}}</a>
+            </div>
+        </div>
+      <!-- bottom panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="bottomPan">
+          <a href="#/{{bottomURL}}" id="bottomNavB"  role="button">{{bottomPanel}}</a>
+        </div>
+      </div>
+
+ 
+
+
+     
+    

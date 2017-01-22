@@ -1,0 +1,66 @@
+      <!-- view -->
+      <!-- top panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="topPan">
+          <button type="submit" class="btn btn-primary btn-xs" ng-click="logOut()">{{topPanel}}</button>
+        </div>
+      </div>
+      <!-- Body of page -->
+      <div class="row bodyRow">
+        <!-- left column -->
+        <div class="col-xs-1" id="sidePan"><a id="leftNavB" href="#/{{leftURL}}" role="button">{{leftPanel}}</a></div>
+        <!-- middle body, show only if authenticated -->
+        <div class="col-xs-10" id="bodyBlock" ng-show = "!check">
+          <h3>Your Time Credits:</h3>
+            <div class="panel-group">
+        
+                  <div class="panel panel-default">
+                      <div class="panel-body">Total Credits: {{userInfo.credits}}</div> 
+                  </div>
+                
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Exchange Credits:</div>
+                    <div class="panel-body">
+                      <form class="login-form">
+                          <div class="form-group">
+                            </select>
+                            
+                                  <div class="form-group">
+                                    <label for='creditTo'>To:</label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="creditsTo"
+                                            ng-model = "userTo"
+                                            required="required">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="credits">Amount:</label>
+                                    <input type="text" 
+                                            class="form-control" 
+                                            id="credits"
+                                            ng-model = "creditsTo" 
+                                            required="required">
+                                  </div>
+
+                          </div>
+
+                          <button type="submit" class="btn btn-default" ng-click="sendCredit()">Submit</button>
+
+                        </form>
+                    </div>
+                  </div>
+
+              
+            </div>
+        </div>
+        <!-- show if not authenticated -->
+        <div class="col-xs-10" id="bodyBlock" ng-show = "check">
+          {{message}}
+        </div>
+        <!-- right column -->
+        <div class="col-xs-1" id="sidePan"><a id="rightNavB" href="#/{{rightURL}}" role="button">{{rightPanel}}</a></div>
+      </div>
+      <!-- bottom panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="bottomPan"><a id="bottomNavB" href="#/{{bottomURL}}" role="button">{{bottomPanel}}</a></div>
+      </div>

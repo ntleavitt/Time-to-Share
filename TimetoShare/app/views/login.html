@@ -1,0 +1,41 @@
+
+
+
+       <!-- view -->
+      <!-- top panel button -->  
+      <div class="row">
+        <div class="col-xs-12" style="opacity: 1.0; text-align: center; border-style: solid;"><a href="#/" role="button">{{topPanel}}</a>
+        </div>
+      </div>
+      <!-- Body of page -->
+      <div class="row bodyRow">
+        <!-- left column -->
+        <div class="col-xs-1" id="sidePan"><a id="leftNavB" href="#/{{leftURL}}" role="button">{{leftPanel}}</a></div>
+        <!-- middle body -->
+        <div class="col-xs-10" id="bodyBlock" style="opacity: 1.0; height:100%; border-style: solid; border-color: #b1cbbb">
+        	<h2>Login Form</h2>
+          <p ng-show = "!messageCh">{{message}}</p>
+          
+			  <form ng-submit="submitLogin()">
+			    <div class="form-group">
+			      <label for="username">Username: {{userId.id}}</label>
+			      <input type="text" class="form-control" id="username" ng-model="user.username" placeholder="Enter Username">
+			    </div>
+			    <div class="form-group">
+			      <label for="pwd">Password:</label>
+			      <input type="password" class="form-control" id="pwd" ng-model="user.password" placeholder="Enter password">
+			    </div>
+			   
+			    <button type="submit" class="btn btn-default">Submit</button>
+			  </form>
+        </div>
+        <!-- right column -->
+        <div class="col-xs-1" id="sidePan"><a id="rightNavB" href="#/{{rightURL}}" role="button">{{rightPanel}}</a></div>
+      </div>
+      <!-- bottom panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="bottomPan" style="opacity: 1.0; text-align: center; border-style: solid; border-color: #deeaee;"><a id="bottomNavB" href="#/{{bottomURL}}" role="button">{{bottomPanel}}</a></div>
+      </div>
+
+  
+  

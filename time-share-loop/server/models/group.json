@@ -1,0 +1,50 @@
+{
+  "name": "Group",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "motto": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "members": {
+      "type": "hasMany",
+      "model": "member",
+      "foreignKey": ""
+    },
+    "discussions": {
+      "type": "hasMany",
+      "model": "discussion",
+      "foreignKey": ""
+    },
+    "services": {
+      "type": "hasMany",
+      "model": "service",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

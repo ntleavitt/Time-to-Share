@@ -1,0 +1,74 @@
+
+  <!-- view -->
+      <!-- top panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="topPan">
+          <button type="submit" class="btn btn-primary btn-xs" ng-click="logOut()">{{topPanel}}</button>
+        </div>
+      </div>
+      <!-- Body of page -->
+      <div class="row bodyRow">
+        <!-- left column -->
+        <div class="col-xs-1" id="sidePan"><a id="leftNavB" href="#/{{leftURL}}" role="button">{{leftPanel}}</a></div>
+        <!-- middle body, show only if authenticated -->
+        <div class="col-xs-10" id="bodyBlock" ng-show = "!check">
+          <h3>Service Topic</h3>
+          <div class="row">
+              <div class="col-xs-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">{{sellected.title}}</h3>
+                  </div>
+                  <div class="panel-body">
+                    <p>{{sellected.description}}</p>
+                  </div>
+                  <div class="panel-footer">
+                    <div class="row">
+                      <div class="col-sm-1">
+                      </div>
+                      <div class="col-sm-10">
+                        <div class="input-group">
+                          <input type="text" class="form-control" ng-model="serviceComment" placeholder="Please enter a comment here...">
+                          <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="submitComment()" type="button">Comment</button>
+                          </span>
+                        </div><!-- /input-group -->
+                      </div><!-- /.col-sm-10 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1">
+              </div>
+              <div class="col-xs-10">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Comments:</h3>
+                  </div>
+                  <div class="panel-body scroll">
+                    <ul class="list-unstyled">
+                      <li ng-repeat="x in comments">
+                          <blockquote>
+                            <p>{{x.comment}}</p>
+                            <footer>{{x.author}}, {{x.date | date: "MMM d, y"}}</footer>
+                          </blockquote>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- show if not authenticated -->
+        <div class="col-xs-10" id="bodyBlock" ng-show = "check">
+          {{message}}
+        </div>
+        <!-- right column -->
+        <div class="col-xs-1" id="sidePan"><a id="rightNavB" href="#/{{rightURL}}" role="button">{{rightPanel}}</a></div>
+      </div>
+      <!-- bottom panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="bottomPan"><a id="bottomNavB" href="#/{{bottomURL}}" role="button">{{bottomPanel}}</a></div>
+      </div>

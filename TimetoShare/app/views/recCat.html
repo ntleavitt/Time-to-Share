@@ -1,0 +1,54 @@
+
+  <!-- view -->
+      <!-- top panel button -->
+      <div class="row">
+        <div class="col-xs-12" style="opacity: 1.0; text-align: right; border-style: solid;"><button type="submit" class="btn btn-primary btn-xs" ng-click="recServ()">{{topPanel}}</button>
+        </div>
+      </div>
+      <!-- Body of page -->
+      <div class="row bodyRow">
+        <!-- left column -->
+        <div class="col-xs-1" id="sidePan"><a id="leftNavB" href="#/{{leftURL}}" role="button">{{leftPanel}}</a></div>
+        <!-- middle body, show only if authenticated -->
+        <div class="col-xs-10" id="bodyBlock" ng-show = "!check">
+          <div class="row dropDown">
+              <div class="col-xs-10">
+                <h3>Filter by Categorie</h3>
+                <select ng-model = "catFilter">
+                  <option value="">All</option>
+                  <option value="art">Artists</option>
+                  <option value="child">Childcare</option>
+                  <option value="const">Construction</option>
+                  <option value="ed">Education</option>
+                  <option value="food">Food</option>
+                  <option value="garden">Garden</option>
+                  <option value="music">Music</option>
+                  <option value="pet">Pets</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="container scrollList">
+              <ul class="list-unstyled">
+                <li ng-repeat="x in service | filter: catFilter " class="listItem">
+                    <a href="#/services/sellect" ng-click="setService(x)">
+                      <blockquote>
+                        <p>{{x.title}}</p>
+                        <footer>{{x.category}}, {{x.date | date: "MMM d, y"}}</footer>
+                    </blockquote>
+                  </a>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <!-- show if not authenticated -->
+        <div class="col-xs-10" id="bodyBlock" ng-show = "check">
+          {{message}}
+        </div>
+        <!-- right column -->
+        <div class="col-xs-1" id="sidePan"><a id="rightNavB" href="#/{{rightURL}}" role="button">{{rightPanel}}</a></div>
+      </div>
+      <!-- bottom panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="bottomPan"><a id="bottomNavB" href="#/{{bottomURL}}" role="button">{{bottomPanel}}</a></div>
+      </div>

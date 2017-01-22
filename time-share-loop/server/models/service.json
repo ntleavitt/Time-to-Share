@@ -1,0 +1,52 @@
+{
+  "name": "service",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "comments": {
+      "type": [
+        "object"
+      ],
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "group": {
+      "type": "belongsTo",
+      "model": "Group",
+      "foreignKey": "groupId"
+    },
+    "member": {
+      "type": "belongsTo",
+      "model": "member",
+      "foreignKey": "publisherId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

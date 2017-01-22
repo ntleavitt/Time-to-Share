@@ -1,0 +1,41 @@
+{
+  "name": "member",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "credits": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "group": {
+      "type": "belongsTo",
+      "model": "Group",
+      "foreignKey": "groupId"
+    },
+    "discussions": {
+      "type": "hasMany",
+      "model": "discussion",
+      "foreignKey": ""
+    },
+    "services": {
+      "type": "hasMany",
+      "model": "service",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

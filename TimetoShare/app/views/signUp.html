@@ -1,0 +1,78 @@
+
+    
+<!-- view -->
+      <!-- top panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="topPan">
+          <a class="btn btn-primary btn-xs" href="#/newGroup" role="button">{{topPanel}}</a>
+        </div>
+        </div>
+      </div>
+      <!-- Body of page -->
+      <div class="row bodyRow">
+        <!-- left column -->
+        <div class="col-xs-1" id="sidePan"><a id="leftNavB" href="#/{{leftURL}}" role="button">{{leftPanel}}</a></div>
+        <!-- middle body -->
+        <div class="col-xs-10" id="bodyBlock">
+            <h2 style="color:#eea29a">Create an account:</h2>
+
+            <form class="login-form" name="addForm" ng-submit = "addUser()">
+              <div class="form-group">
+                
+                <label for="country">Country:</label>
+                <select class="form-control" id="country" ng-model="myCountry" ng-options="timeGroup.country as timeGroup.country for timeGroup in timeGroups | unique:'country'" required="required">  
+                </select>
+
+                <label for="state">State:</label>
+                <select class="form-control" id="state" ng-model="myState" ng-options="timeGroup.state group by timeGroup.country for timeGroup in timeGroups | filter: myCountry" required="required"> 
+                </select>
+                
+                <label for="city">City:</label>
+                <select class="form-control" id="city" ng-model="myCity" ng-options="timeGroup.city group by timeGroup.state for timeGroup in timeGroups | filter: myState" required="required">
+                </select>
+                
+                <label for="group">Group:</label>
+                <select class="form-control" id="group" ng-model="myGroup" ng-options="timeGroup.name group by timeGroup.city for timeGroup in timeGroups | filter: myCity" required="required">
+                </select>
+                
+                      <div class="form-group">
+                        <label for='name'>Username:</label>
+                        <input type="text" 
+                                class="form-control" 
+                                id='name' 
+                                ng-model="userSignUp.name"
+                                required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" 
+                                class="form-control" 
+                                id="password" 
+                                ng-model="userSignUp.password"
+                                required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" 
+                                class="form-control" 
+                                id="email" 
+                                ng-model="userSignUp.email"
+                                required="required">
+                      </div>
+                      
+                    
+              </div>
+              <button type="submit" class="btn btn-default" ng-disabled="addForm.$invalid">Submit</button>
+            </form>
+        </div>
+        <!-- right column -->
+        <div class="col-xs-1" id="sidePan"><a id="rightNavB" href="#/{{rightURL}}" role="button">{{rightPanel}}</a></div>
+      </div>
+      <!-- bottom panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="bottomPan"><a id="bottomNavB" href="#/{{bottomURL}}" role="button">{{bottomPanel}}</a></div>
+      </div>
+
+
+
+  

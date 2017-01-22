@@ -1,0 +1,72 @@
+<!-- view -->
+<!-- top panel button -->
+<div class="row">
+        <div class="col-xs-12" id="topPan">
+          
+        </div>
+        </div>
+      </div>
+      <!-- Body of page -->
+      <div class="row bodyRow">
+        <!-- left column -->
+        <div class="col-xs-1" id="sidePan"><a id="leftNavB" href="#/{{leftURL}}" role="button">{{leftPanel}}</a></div>
+        <!-- middle body-->
+        <div class="col-xs-10" id="bodyBlock">
+            <h2 style="color:#eea29a">Create a new Group:</h2>
+
+            <form class="login-form" name="addForm" ng-submit = "addGroup()">
+                
+                      <div class="form-group">
+                        <label for='name'>Country:</label>
+                        <input type="text" 
+                                class="form-control" 
+                                id='name' 
+                                ng-model="newGroup.Country"
+                                required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="state">State:</label>
+                        <input type="text" 
+                                class="form-control" 
+                                id="state" 
+                                ng-model="newGroup.State"
+                                required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="city">City:</label>
+                        <input type="text" 
+                                class="form-control" 
+                                id="city" 
+                                ng-model="newGroup.City"
+                                required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="group">Group:</label>
+                        <input type="text" 
+                                class="form-control" 
+                                id="group" 
+                                ng-model="newGroup.Group"
+                                required="required">
+                      </div>
+                      <div class="form-group">
+                        <label for="motto">Motto:</label>
+                        <input type="text" 
+                                class="form-control" 
+                                id="motto" 
+                                ng-model="newGroup.Motto"
+                                required="required">
+                      </div>
+                      
+                    
+              
+              <button type="submit" class="btn btn-default" ng-disabled="addForm.$invalid">Submit</button>
+              
+            </form>
+        </div>
+         <!-- right column -->
+        <div class="col-xs-1" id="sidePan"><a id="rightNavB" href="#/{{rightURL}}" role="button">{{rightPanel}}</a></div>
+      </div>
+      <!-- bottom panel button -->
+      <div class="row">
+        <div class="col-xs-12" id="bottomPan"><a id="bottomNavB" href="#/{{bottomURL}}" role="button">{{bottomPanel}}</a></div>
+      </div>
