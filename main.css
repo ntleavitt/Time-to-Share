@@ -1,0 +1,157 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+body {
+  background: url(/images/bricks.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+#listDis {
+  margin-top: 10px;
+}
+
+.listItemDis {
+  background: rgba(222, 234, 238, 0.7);
+}
+
+#bodyBlock {
+  background: rgba(222, 234, 238, 0.4); height:100%;
+}
+
+#topPan {
+  opacity: 1.0; text-align: right; border-style: solid;;
+}
+
+#sidePan {
+  opacity: 1.0; height:100%; border-style: solid; border-color: #eea29a;
+}
+
+#bottomPan {
+  opacity: 1.0; height:100%; text-align: center;
+}
+
+#topNavB {
+  background:#b1cbbb;
+}
+
+#leftNavB {
+  height:40px; border:solid 3px #CCCCCC; background:#333; width:100px; line-height:32px;
+  -webkit-transform:rotate(90deg); font-weight:600; color:white; transform:rotate(90deg);  
+  -ms-transform:rotate(90deg);  -moz-transform:rotate(90deg); text-align:center; font-size:17px; 
+  position:fixed; left:-35px; top:45%; font-family: "Roboto", helvetica, arial, sans-serif; z-index:999;
+}
+#rightNavB {
+  height:40px; border:solid 3px #CCCCCC; background:#333; width:100px; line-height:32px; 
+  -webkit-transform:rotate(-90deg); font-weight:600; color:white; transform:rotate(-90deg);  
+  -ms-transform:rotate(-90deg);  -moz-transform:rotate(-90deg); text-align:center; font-size:17px; 
+  position:fixed; right:-35px; top:45%; font-family: "Roboto", helvetica, arial, sans-serif; z-index:999;
+}
+
+#bottomNavB {
+  border:solid 3px #CCCCCC; background:#333; width:100px; line-height:32px; text-align:center; color:white; font-size:17px;  
+  right:0%; bottom:0px; font-family: "Roboto", helvetica, arial, sans-serif;
+}
+/*Comments scolling*/
+div.scroll {
+  width:100%;
+  height: 200px;
+  overflow: scroll;
+}
+
+/*listed service/dicusiton*/
+.listItem{
+  background: rgba(177, 203, 187, 0.7);
+}
+/*Add space between drop-down and list*/
+.dropDown {
+  margin-bottom: 10px;
+}
+
+/*Add scrolling to listed items*/
+.scrollList {
+  width:100%;
+  height: 70%;
+  overflow: scroll;
+}
+
+/*Edit discussion and service form*/
+.form-horizontal {
+  margin-top: 10px;
+}
+
+/*control the position of bottom nav*/
+.bodyRow {
+  height:91%;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
